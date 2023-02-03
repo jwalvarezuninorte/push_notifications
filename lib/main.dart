@@ -28,7 +28,7 @@ class _MyAppState extends State<MyApp> {
     super.initState();
 
     PushNotificationService.messagesStream.listen((message) {
-      print('From main.dart');
+      print('...From main.dart');
       print(message.toString());
       navigatorKey.currentState?.pushNamed(
         message.keys.first,
