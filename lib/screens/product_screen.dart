@@ -9,13 +9,29 @@ class ProfessorScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Colors.blue,
+      appBar: AppBar(
+        title: const Text('Professor'),
+        backgroundColor: Colors.blue,
+        elevation: 0,
+      ),
       body: Center(
-        child: Text(
-          'Cargar info profesor : $args',
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 20,
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Icon(
+              Icons.person,
+              color: Colors.white,
+              size: 50,
+            ),
+            const SizedBox(height: 40),
+            Text(
+              '$args',
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+              ),
+            ),
+          ],
         ),
       ),
     );

@@ -31,7 +31,7 @@ class _MyAppState extends State<MyApp> {
       print('From main.dart');
       print(message.toString());
       navigatorKey.currentState?.pushNamed(
-        message.keys.first,
+        message['route'],
         arguments: message,
       );
 

@@ -9,13 +9,29 @@ class MessageScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Colors.red,
+      appBar: AppBar(
+        title: const Text('Professor'),
+        backgroundColor: Colors.red,
+        elevation: 0,
+      ),
       body: Center(
-        child: Text(
-          'Cardar info chat : $args',
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 20,
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Icon(
+              Icons.message,
+              color: Colors.white,
+              size: 50,
+            ),
+            const SizedBox(height: 40),
+            Text(
+              '$args',
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+              ),
+            ),
+          ],
         ),
       ),
     );

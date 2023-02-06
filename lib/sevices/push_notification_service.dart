@@ -14,11 +14,10 @@ class PushNotificationService {
   static Stream<Map<String, dynamic>> get messagesStream =>
       _messageStream.stream;
 
-  // static Future _backgroundHandler(RemoteMessage message) async {
-  //   // print( 'onBackground Handler ${ message.messageId }');
-  //   print(message.data);
-  //   _messageStream.add(message.data['product'] ?? 'No data');
-  // }
+  static Future _backgroundHandler(RemoteMessage message) async {
+    // print( 'onBackground Handler ${ message.messageId }');
+    _messageStream.add(message.data);
+  }
 
   // static Future _onMessageHandler(RemoteMessage message) async {
   //   // print( 'onMessage Handler ${ message.messageId }');
@@ -41,7 +40,7 @@ class PushNotificationService {
     print('Token: $token');
 
     // Handlers
-    // FirebaseMessaging.onBackgroundMessage(_backgroundHandler);
+    FirebaseMessaging.onBackgroundMessage(_backgroundHandler);
     // FirebaseMessaging.onMessage.listen(_onMessageHandler);
     FirebaseMessaging.onMessageOpenedApp.listen(_onMessageOpenApp);
 
